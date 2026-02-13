@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>RabbitHole</title>
+
+    <style id="expo-reset">
+      html, body {
+        height: 100% !important;
+        max-height: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+      }
+
+      #root {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+
+      #root > div,
+      #root > div > div,
+      #root > div > div > div,
+      #root > div > div > div > div,
+      #root > div > div > div > div > div,
+      #root > div > div > div > div > div > div,
+      #root > div > div > div > div > div > div > div,
+      #root > div > div > div > div > div > div > div > div {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 1 0% !important;
+        min-height: 0 !important;
+        max-height: 100% !important;
+        overflow: hidden !important;
+      }
+
+      [class*="css-"][class*="r-"] {
+        min-height: 0 !important;
+      }
+
+      /* Custom scrollbar — earthy rabbit hole theme */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #D4A574 transparent;
+      }
+      *::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      *::-webkit-scrollbar-thumb {
+        background-color: #D4A574;
+        border-radius: 999px;
+      }
+      *::-webkit-scrollbar-thumb:hover {
+        background-color: #6B4226;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>
