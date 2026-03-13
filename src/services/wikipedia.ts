@@ -58,11 +58,20 @@ function stripHtml(html: string): string {
 }
 
 /**
+ * Ensure a URL has an explicit protocol.
+ * Wikipedia often returns protocol-relative URLs (//upload.wikimedia.org/...)
+ * which work in browsers but fail on mobile (expo-image needs https://).
+ */
+function normalizeUrl(url: string): string {
+  return url.startsWith('//') ? `https:${url}` : url;
+}
+
+/**
  * Scale a Wikipedia thumbnail URL to a desired width.
  * Thumbnail URLs contain /NNNpx- which we replace with the desired width.
  */
 function scaleThumbnailUrl(url: string, desiredWidth: number): string {
-  return url.replace(/\/\d+px-/, `/${desiredWidth}px-`);
+  return normalizeUrl(url.replace(/\/\d+px-/, `/${desiredWidth}px-`));
 }
 
 /**
@@ -421,7 +430,7 @@ export async function batchGetSummaries(titles: string[]): Promise<Article[]> {
           title: page.title,
           displayTitle,
           excerpt: page.extract || '',
-          thumbnailUrl: page.thumbnail?.source || undefined,
+          thumbnailUrl: page.thumbnail?.source ? normalizeUrl(page.thumbnail.source) : undefined,
           categories: [],
           contentUrl: page.fullurl || `${BASE_URL}/wiki/${encodeURIComponent(page.title.replace(/ /g, '_'))}`,
           fetchedAt: Date.now(),
