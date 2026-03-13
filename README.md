@@ -4,6 +4,18 @@ An intentionally addictive Wikipedia reader. TikTok-style feed mechanics applied
 
 8-pool recommendation engine that learns your interests, detects flow states, and optimizes for curiosity. Fully client-side — no server, no auth, no accounts, no tracking. Everything runs on-device.
 
+## Screenshots
+
+| Feed (Dark) | Feed (Light) | Article (Dark) | Article (Light) |
+|---|---|---|---|
+| ![Feed Dark](screenshots/feed-dark.png) | ![Feed Light](screenshots/feed-light.png) | ![Article Dark](screenshots/article-dark.png) | ![Article Light](screenshots/article-light.png) |
+
+| Onboarding (Dark) | Onboarding (Light) | Settings |
+|---|---|---|
+| ![Onboarding Dark](screenshots/onboarding-dark.png) | ![Onboarding Light](screenshots/onboarding-light.png) | ![Settings](screenshots/settings.png) |
+
+**Onboarding demo:** [onboarding-demo.mp4](screenshots/onboarding-demo.mp4)
+
 ## Stack
 
 | Layer | Tech |
