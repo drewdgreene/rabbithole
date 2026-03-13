@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/icon.png" width="120" alt="RabbitHole" />
+</p>
+
 # RabbitHole
 
 An intentionally addictive Wikipedia reader. TikTok-style feed mechanics applied to real knowledge instead of brain rot.
