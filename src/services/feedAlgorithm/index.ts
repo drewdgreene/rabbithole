@@ -189,13 +189,13 @@ function deduplicateAndFilter(
   const seen = new Set<number>();
   return items.filter(item => {
     if (isNamespacePage(item.article.title)) return false;
-    if (isBroadOverviewArticle(item.article.title, item.article.excerpt)) return false;
+    if (isBroadOverviewArticle(item.article.title)) return false;
     if (dismissedSet.has(item.article.pageId)) return false;
     if (seen.has(item.article.pageId) || ctx.existingPageIds.has(item.article.pageId)) {
       return false;
     }
-    // Filter stub articles — under 2 min read is too shallow for the feed
-    if ((item.readTimeMin || 0) > 0 && (item.readTimeMin || 0) < 2) return false;
+    // Filter stub articles — excerpts under 80 chars are too thin for a feed card
+    if (item.article.excerpt.length < 80) return false;
     seen.add(item.article.pageId);
     return true;
   });

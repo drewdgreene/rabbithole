@@ -15,7 +15,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rabbithole.app"
+      "bundleIdentifier": "com.drewdgreene.rabbithole",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -39,6 +42,11 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7f5a94c4-8aea-4446-9cc2-44614c3c0c8d"
+      }
+    }
   }
 }

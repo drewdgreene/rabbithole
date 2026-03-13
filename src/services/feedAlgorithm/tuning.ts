@@ -157,31 +157,8 @@ export const GENERIC_TITLES = new Set([
 // Detect broad overview articles that make poor feed recommendations
 export const DEFINITIONAL_PATTERN = /^(In general,|.{0,30}\b(is|was|are|were)\s+["\u201C]?(a|an|the|defined|considered|regarded)\b|.{0,30}\brefers?\s+to\b|.{0,30}\bcan be (defined|described)\b|.{0,30}\bis a term\b|.{0,30}\bis the (study|practice|process|act|state|concept)\b|.{0,30}\b(encompasses|comprises|includes|involves|denotes|covers)\b)/i;
 
-/**
- * Detect broad overview articles that make poor feed recommendations.
- * Three-layer check:
- * 1. Exact title match against blocklist
- * 2. Single common-word titles (e.g. "Eating", "Color") — almost always broad
- * 3. Definitional excerpt opening (e.g. "X is a...", "X refers to...")
- */
-export function isBroadOverviewArticle(title: string, excerpt?: string): boolean {
-  // Layer 1: exact match
-  if (GENERIC_TITLES.has(title)) return true;
-
-  // Layer 2: single-word titles that are common English words (very likely broad)
-  if (/^[A-Z][a-z]+$/.test(title) && title.length <= 12) {
-    // Short single-word titles are almost always broad overview articles.
-    // Exceptions: proper nouns that are also common words are rare in Wikipedia
-    // feed context and acceptable false positives.
-    return true;
-  }
-
-  // Layer 3: definitional excerpt (only if excerpt provided)
-  if (excerpt && DEFINITIONAL_PATTERN.test(excerpt)) {
-    return true;
-  }
-
-  return false;
+export function isBroadOverviewArticle(title: string): boolean {
+  return GENERIC_TITLES.has(title);
 }
 
 // ─── Curiosity Magnet Categories ────────────────────────────────
