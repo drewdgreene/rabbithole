@@ -14,7 +14,7 @@ An intentionally addictive Wikipedia reader. TikTok-style feed mechanics applied
 |---|---|---|
 | ![Onboarding Dark](screenshots/onboarding-dark.png) | ![Onboarding Light](screenshots/onboarding-light.png) | ![Settings](screenshots/settings.png) |
 
-**Onboarding demo:** [onboarding-demo.mp4](screenshots/onboarding-demo.mp4)
+<video src="screenshots/onboarding-demo.mp4" width="300" autoplay loop muted playsinline></video>
 
 ## Stack
 
